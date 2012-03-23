@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<head>
+    <title>Online YUI Compressor</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Online JavaScript/CSS Compression Using YUI Compressor</h1>
+    </div>
+
+    <p>This is a web interface to compress your JavaScript or CSS. This tool uses <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor 2.4.7</a>.</p>
+
+    <form action="#output" enctype="multipart/form-data" method="post" class='form-horizontal'>
+        <fieldset>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#textinput" class="on" data-toggle="tab">Text</a></li>
+                <li><a href="#fileinput" data-toggle="tab">File(s)</a></li>
+                <li><a href="#urlinput" data-toggle="tab">URL(s)</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="control-group tab-pane active" id="textinput">
+                    <label for="compresstext" class='control-label'>Code</label>
+                    <div class="controls">
+                        <textarea name="compresstext" id="compresstext" class="span10" rows="5" cols="80" class="input"></textarea>
+                        <span class="help-block">Paste a block of CSS or JS to compress in the area below.</span>
+                    </div>
+                </div>
+                <div class="control-group tab-pane" id="fileinput">
+                    <label for="compressfile_1" class='control-label'>File(s)</label>
+                    <div class="controls">
+                        <ol class="files">
+                            <li>
+                                <input type="file" name="compressfile[]" id="compressfile_1" multiple>
+                            </li>
+                        </ol>
+                        <span class="help-block">Choose one or more files of the same type to compress.</span>
+                    </div>
+                </div>
+                <div class="control-group tab-pane" id="urlinput">
+                    <label for="url_a" class='control-label'>URL(s)</label>
+                    <div class="controls">
+                        <ol class="urls">
+                            <li>
+                                <input type="text" name="compressurl[]" id="url_1">
+                            </li>
+                        </ol>
+                        <span class="help-block">Enter one or more URLs of the same type to compress.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="type" class='control-label'>File Type</label>
+                <div class="controls">
+                    <select name="type" id="type" class="span2">
+                        <option>JS</option>
+                        <option>CSS</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class='options'>
+            <legend>Options</legend>
+            <div class="control-group">
+                <label class='control-label'>Global Options</label>
+                <div class="controls">
+                    <label class='checkbox'>
+                        <input type="checkbox" name="verbose" id="verbose">
+                        Display informational messages and warnings. (useful for cleaning up your JS)
+                    </label>
+                    <label>
+                        <input type="number" name="jslinebreak" id="linebreak" class="span2">
+                        Insert a line break after the specified column number.
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class='control-label'>JavaScript Options</label>
+                <div class="controls">
+                    <label class='checkbox'>
+                        <input type="checkbox" name="nomunge" id="nomunge">
+                        Minify only, no symbol obfuscation.
+                    </label>
+                    <label class='checkbox'>
+                        <input type="checkbox" name="semi" id="semi">
+                        Preserve unnecessary semicolons (such as right before a '}').
+                    </label>
+                    <label class='checkbox'>
+                        <input type="checkbox" name="nooptimize" id="nooptimize">
+                        Disable all the built-in micro optimizations.
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class='control-label'>CSS Options</label>
+                <div class="controls">
+                    <label class='checkbox'>
+                        <input type="checkbox" name="csslinebreak">
+                        Insert a line breaks after '}' characters.
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class='control-label'>Redirect Options</label>
+                <div class="controls">
+                    <label class='radio'>
+                        <input name="redirect" type="radio" value="0" checked='checked'>
+                        No redirect
+                    </label>
+                    <label class='radio'>
+                        <input name="redirect" type="radio" value="1">
+                        Redirect to output
+                    </label>
+                    <label class='radio'>
+                        <input name="redirect" type="radio" value="2">
+                        Redirect to gzipped output
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="well" style="text-align: center">
+            <button type="submit" class="btn btn-primary btn-large" data-loading-text="Compressing">Compress</button>
+        </div>
+
+    </form>
+
+    <section id="output">
+
+                    <h2>Compressed Code</h2>
+            <div class="row">
+                <div class='span8'>
+                    <textarea rows="20" cols="80" class="span8" style="margin-bottom: 20px" readonly="readonly">body{font-family:arial,sans-serif;color:#666;background:#fff;font-size:12px}a:hover{text-decoration:underline}.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.clearfix{display:inline-block}#tpmgps-wrapper{padding:10px;width:335px;height:690px}#tpmgps-wrapper h2{font-family:'Open Sans',arial;font-size:16px;font-weight:400;color:#444}#tmgps-widget-header{padding-bottom:20px;margin-bottom:20px;border-bottom:7px solid #e5e5e5;overflow:hidden;clear:both}.tmgps-profile-info{position:relative}.tmgps-profile-image{width:50px;float:left;margin-right:10px;border:1px solid #e5e5e5}.tmgps-profile-name{color:#000;font-weight:bold}.tmgps-profile-addtocircle{position:relative;width:80px;height:34px;overflow:hidden;top:-10px}.tmgps-profile-addtocircle div{width:80px!important;height:31px!important;position:absolute!important;height:50px!important;overflow:hidden}.tmgps-profile-addtocircle div iframe{position:absolute!important;top:-50px!important;left:-10px!important}#tpmgps-widget-container{margin-top:20px}#tpmgps-widget-container h3,#tpmgps-widget-container h3 a,#tpmgps-widget-container h3 a:visited,#tpmgps-widget-container h3 a:hover,#tpmgps-widget-container h3 a:active{color:#666;font-size:13px;text-decoration:none}.tmgps-stream-item{padding-bottom:29px;margin-bottom:20px;border-bottom:1px solid #e5e5e5}.tmgps-stream-attachment-image{max-width:325px;margin-bottom:0 auto}.tmgps-stream-item-meta{font-size:11px;overflow:hidden}.tmgps-stream-item-updated{float:left}.tmgps-stream-item-plusoners{color:#15c;float:right}.tmgps-stream-item-inner{float:left;margin:0 10px 10px 0}</textarea>
+                </div>
+                                    <div class='span4'>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>before</td>
+                                <td>1839</td>
+                            </tr>
+                            <tr>
+                                <td>after compression</td>
+                                <td>1629</td>
+                            </tr>
+                            <tr>
+                                <td>compression ratio</td>
+                                <td>11%</td>
+                            </tr>
+                            <tr>
+                                <td>after compression and gzip</td>
+                                <td>637</td>
+                            </tr>
+                            <tr>
+                                <td>compression and gzip ratio</td>
+                                <td>65%</td>
+                            </tr>
+                        </table>
+                    </div>
+                            </div>
+
+            <div class='well' style="text-align: center">
+                <a href="/yui/files/f2e2867113f1f98bb749f35261b2b171de1bf0fa/tpmgps-base.min.css" class="btn btn-success btn-large">Download Compressed File</a>
+                <a href="/yui/files/f2e2867113f1f98bb749f35261b2b171de1bf0fa/tpmgps-base.min.css.gz" class="btn btn-success btn-large">Download Gzipped Compressed File</a>
+            </div>
+        
+    </section>
+
+    <section>
+        <h2>Further Reading</h2>
+        <blockquote>
+            <p>In my investigation, I discovered coding patterns that prevented YUI Compressor from performing variable name replacement. By modifying or avoiding these coding patterns, you can improve the YUI Compressor&#8217;s performance.</p>
+            <small><a href="http://www.alistapart.com/articles/better-javascript-minification/">Better JavaScript Minification</a></small>
+        </blockquote>
+        <blockquote>
+            <p>Running your JavaScript code through YUI Compressor results in tremendous savings by default, but there are things you can do to increase the byte savings even further.</p>
+            <small><a href="http://yuiblog.com/blog/2008/02/11/helping-the-yui-compressor">Helping the YUI Compressor</a></small>
+        </blockquote>
+        <blockquote>
+            <p>A minifier removes the comments and unnecessary whitespace from a program. Depending on how the program is written, this can reduce the size by about half. An obfuscator also minifies, but it will also make modifications to the program, changing the names of variables, functions, and members, making the program much harder to understand, and further reducing its size in the bargain.</p>
+            <small><a href="http://yuiblog.com/blog/2006/03/06/minification-v-obfuscation/">Minification vs Obfuscation</a></small>
+        </blockquote>
+        <blockquote>
+            <p>When we talk of style here, we are not talking about fads and fashions, nor are we talking about CSS or conventions of layout or typography. We are talking about timeless qualities of expression which can substantially increase the value of a codebase. For companies whose valuations are are inextricably bound to their codebases, style should be a vital concern.</p>
+            <small>The Elements of JavaScript Style [ <a href="http://javascript.crockford.com/style1.html">Part 1</a> | <a href="http://javascript.crockford.com/style2.html">Part 2</a> ]</small>
+        </blockquote>
+    </section>
+
+    <section>
+        <h2>A note on Privacy</h2>
+        <p>Every bit of code entered into this tool is made into a file on my server. That file is fed into the YUI Compressor which outputs a compressed version of that file. The original code is removed immediately from the server, but the compressed file sticks around for a while so you can download it. Every hour, files older than 60 minutes are removed automatically from the server.</p>
+        <p>I made my php class public a while ago. You can see what&#8217;s going on here: <a href="http://github.com/gpbmike/PHP-YUI-Compressor">http://github.com/gpbmike/PHP-YUI-Compressor</a></p>
+        <p>I don&#8217;t read or copy any of your code. You&#8217;ll just have to take my word for it I guess.</p>
+    <section>
+
+    <section>
+        <h2>Changelog</h2>
+        <dl>
+            <dt>February 23, 2012</dt>
+            <dd>
+                <ul>
+                    <li>Concat JS</li>
+                    <li>Fix CSS linebreak option</li>
+                </ul>
+            </dd>
+            <dt>February 18, 2012</dt>
+            <dd>
+                <ul>
+                    <li>Use <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> for UI</li>
+                    <li>Remember options using <code>localStorage</code></li>
+                    <li>Use name of uploaded/linked file in download name.</li>
+                </ul>
+            </dd>
+            <dt>November 28, 2011</dt>
+            <dd>
+                <ul>
+                    <li>changed to YUI Compressor 2.4.7</li>
+                </ul>
+            </dd>
+            <dt>June 13, 2011</dt>
+            <dd>
+                <ul>
+                    <li>added gzip download option</li>
+                </ul>
+            </dd>
+            <dt>April 29, 2011</dt>
+            <dd>
+                <ul>
+                    <li>changed to YUI compressor 2.4.6</li>
+                    <li>fixed character encoding on download link</li>
+                    <li>added label for redirect link</li>
+                </ul>
+            </dd>
+            <dt>March 6, 2011</dt>
+            <dd>
+                <ul>
+                    <li>Added option to add file by URL.</li>
+                </ul>
+            </dd>
+            <dt>February 28, 2011</dt>
+            <dd>
+                <ul>
+                    <li>Finally wrote that cron job to purge old files.</li>
+                </ul>
+            </dd>
+            <dt>October 25, 2010</dt>
+            <dd>
+                <ul>
+                    <li>Escape output of input.</li>
+                </ul>
+            </dd>
+            <dt>October 6, 2010</dt>
+            <dd>
+                <ul>
+                    <li>Added the <code>multiple</code> attribute to the file input field</li>
+                </ul>
+            </dd>
+            <dt>September 3, 2010</dt>
+            <dd>
+                <ul>
+                    <li>changed to YUI compressor 2.4.4</li>
+                </ul>
+            </dd>
+            <dt>April 22, 2010</dt>
+            <dd>
+                <ul>
+                    <li>Use the php class I wrote for the yui compressor.</li>
+                    <li>Privacy 'policy'</li>
+                </ul>
+            </dd>
+            <dt>December 13, 2009</dt>
+            <dd>
+                <ul>
+                    <li>Download compressed file.</li>
+                </ul>
+            </dd>
+            <dt>May 30, 2009</dt>
+            <dd>
+                <ul>
+                    <li>jump to output after compression</li>
+                    <li>upload multiple files</li>
+                </ul>
+            </dd>
+            <dt>March 10, 2009</dt>
+            <dd>
+                <ul>
+                    <li>fix multi-byte character handling. (thanks Alex)</li>
+                </ul>
+            </dd>
+            <dt>January 18, 2009</dt>
+            <dd>
+                <ul>
+                    <li>changed to YUI compressor 2.4.2</li>
+                    <li>added line-break option</li>
+                    <li>added verbose option</li>
+                </ul>
+            </dd>
+            <dt>November 7, 2008</dt>
+            <dd>
+                <ul>
+                    <li>changed to YUI Compressor 2.4.1</li>
+                    <li>added some links to further reading</li>
+                    <li>fixed utf-8 encoding</li>
+                </ul>
+            </dd>
+            <dt>October 7, 2008</dt>
+            <dd>
+                <ul>
+                    <li>valid HTML markup for kicks</li>
+                </ul>
+            </dd>
+            <dt>October 4, 2008</dt>
+            <dd>
+                <ul>
+                    <li>added error reporting</li>
+                    <li>escape compressed code</li>
+                </ul>
+            </dd>
+            <dt>October 2, 2008</dt>
+            <dd>
+                <ul>
+                    <li>changed to YUI Compressor 2.3.6</li>
+                    <li>stopped escaping double quotes</li>
+                    <li>hide command</li>
+                </ul>
+            </dd>
+        </dl>
+    </section>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>If you have any feedback, or have a feature request, hit me up at <a href="mailto:gpbmike@gmail.com">gpbmike@gmail.com</a>.</p>
+    </div>
+</footer>
+
+<script src='static/js/yuicompressor.min.js'></script>
+
+</body>
+</html>

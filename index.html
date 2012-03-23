@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>TM jQuery Google Plus Public Stream Widget | Connect</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="build/css/reset.min.css">
+		<link rel="stylesheet" href="build/css/tpmgps-base.min.css">
+		
+	</head>
+	<body>
+		<div id="tpmgps-wrapper">
+			<h2>Latest Updates</h2>
+			<div id="tpmgps-widget-header" class"clearfix"></div>
+			<div id="tpmgps-widget-container" class="clearfix"></div>
+		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="build/js/tpmgps-connect.min.js"></script>
+		<script>
+			function initGplus(){
+				$('#tpmgps-widget-container').TMGplusStream({
+				    'USER_ID' : '110031535020051778989'
+				});
+			}
+		</script>
+		<script src="https://apis.google.com/js/client.js?onload=initGplus"></script>
+		
+		
+	</body>
+	
+</html
+<!-- Localized -->

@@ -1,0 +1,109 @@
+body{
+	font-family:arial, sans-serif;
+	color:#666;
+	background:#fff;
+	font-size:12px;
+}
+a:hover{
+	text-decoration:underline;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+#tpmgps-wrapper{
+	padding:10px;
+	width:335px;
+	height:690px;
+}
+#tpmgps-wrapper h2{
+	font-family:'Open Sans', arial;
+	font-size:16px;
+	font-weight:400;
+	color:#444;
+}
+#tmgps-widget-header{
+	padding-bottom:20px;
+	margin-bottom:20px;
+	border-bottom:7px solid #e5e5e5;
+	overflow:hidden;
+	clear:both;
+}
+
+.tmgps-profile-info{
+	position:relative;
+}
+.tmgps-profile-image{
+	width:50px;
+	float:left;
+	margin-right:10px;
+	border:1px solid #e5e5e5;
+}
+.tmgps-profile-name{
+	color:#000;
+	font-weight:bold;
+}
+.tmgps-profile-addtocircle{
+	position:relative;
+	width:80px;
+	height:34px;
+	overflow:hidden;
+	top:-10px;
+}
+.tmgps-profile-addtocircle div{
+	width:80px !important;
+	height:31px !important;
+	position:absolute !important;
+	height:50px !important;
+	overflow:hidden;
+}
+.tmgps-profile-addtocircle div iframe{
+	position:absolute !important;
+	top:-50px !important;
+	left:-10px !important;
+}
+#tpmgps-widget-container{
+	margin-top:20px;
+}
+#tpmgps-widget-container h3,
+#tpmgps-widget-container h3 a,
+#tpmgps-widget-container h3 a:visited,
+#tpmgps-widget-container h3 a:hover,
+#tpmgps-widget-container h3 a:active{
+	color:#666;
+	font-size:13px;
+	text-decoration:none;
+}
+.tmgps-stream-item{
+	padding-bottom:29px;
+	margin-bottom:20px;
+	border-bottom:1px solid #e5e5e5;
+}
+.tmgps-stream-attachment-image{
+	max-width:325px;
+	margin-bottom:0 auto;
+}
+.tmgps-stream-item-meta{
+	font-size:11px;
+	overflow:hidden;
+}
+.tmgps-stream-item-updated{
+	float:left;
+}
+.tmgps-stream-item-plusoners{
+	color:#1155cc;
+	float:right;
+}
+
+.tmgps-stream-item-inner{
+	float:left;
+	margin:0 10px 10px 0;
+}
