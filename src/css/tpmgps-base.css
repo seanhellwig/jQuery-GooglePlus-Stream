@@ -86,6 +86,7 @@ a:hover{
 	padding-bottom:29px;
 	margin-bottom:20px;
 	border-bottom:1px solid #e5e5e5;
+	overflow:hidden;
 }
 .tmgps-stream-attachment-image{
 	max-width:325px;
